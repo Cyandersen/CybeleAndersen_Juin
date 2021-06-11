@@ -1,6 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
@@ -12,22 +15,21 @@ import java.util.Scanner;
 
 public class Exercise2 {
 
-	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-		Scanner scanner = null;
-        double sumnum = 0;
-        try {
-        	scanner = new Scanner(
-             (Readable) new BufferedReader(new FileReader("/Users/cy.andersen/Desktop/Calcul.txt")));
-        while (scanner.hasNext()) {
-          if (scanner.hasNextDouble()) {
-        sumnum += scanner.nextDouble();
-                    } else {
-                    	scanner.next();
-                    }   }
-        } finally {
-        	scanner.close();
-        }
-        
-        System.out.println(sumnum);
-    }
+	public static void main(String[] args) throws IOException {
+	
+	BufferedReader enter;
+	int sum = 0;
+enter = new BufferedReader (new FileReader("/Users/cy.andersen/Desktop/Calcul.txt"));
+	while(enter.ready())
+	{sum+=Integer.parseInt(enter.readLine());}
+	enter.close();
+	 PrintWriter exit;
+	 FileWriter fichier;
+	 fichier = new FileWriter("/Users/cy.andersen/Desktop/Resultat.txt");
+	 exit=new PrintWriter(fichier);
+	 exit.print(sum);
+	 exit.close();
+
+	}
 }
+	
