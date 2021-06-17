@@ -14,7 +14,7 @@ public class PhoneNewFormat {
 
 	public static void main(String[] args) {
 		//Expression régulière à respecter 
-		String regex="^\\(?C[0-9]{3})\\)?[-. \\s]?C[0-9]{3})?[-.\\s]([0-9]{4})$"; 
+		String regex="^\\(?([0-9]{3})\\)?[-. \\s]?C[0-9]{3})?[-.\\s]([0-9]{4})$"; 
 		// Liste de numéros de tel 
 		List<String> tel=new ArrayList<String>(); 
 		Scanner crayon=new Scanner(System.in); 
